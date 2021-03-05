@@ -1,13 +1,26 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <algorithm>
+
+
 using namespace std;
+
+int arr[100100];
+
 int main() {
-	int a, b;
-	cin >> a >> b;
-	int answer = 0;
-	while(a <= b) {
-		a *= 3;
-		b *= 2;
-		++answer;
+	int res = 0;
+	int n;
+	cin >> n;
+	for (int i = 0; i < n; i++)
+		cin >> arr[i];
+	sort(arr,arr+n);
+	for (int i = 0; i < n; i++){		
+		if (arr[i] > res + 1){
+			cout << res + 1;
+			return 0;
+		}
+		res += val;
 	}
-	printf("%d\n", answer);
+	cout << res + 1;
+
+	return 0;
 }
